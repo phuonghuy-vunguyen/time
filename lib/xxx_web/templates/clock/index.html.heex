@@ -1,0 +1,28 @@
+<h1>Listing Clock</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Status</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for clock <- @clock do %>
+    <tr>
+      <td><%= clock.time %></td>
+      <td><%= clock.status %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.clock_path(@conn, :show, clock) %></span>
+        <span><%= link "Edit", to: Routes.clock_path(@conn, :edit, clock) %></span>
+        <span><%= link "Delete", to: Routes.clock_path(@conn, :delete, clock), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Clock", to: Routes.clock_path(@conn, :new) %></span>

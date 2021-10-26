@@ -1,0 +1,5 @@
+<h1>Edit Clock</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.clock_path(@conn, :update, @clock)) %>
+
+<span><%= link "Back", to: Routes.clock_path(@conn, :index) %></span>

@@ -1,0 +1,18 @@
+<h1>Show Clock</h1>
+
+<ul>
+
+  <li>
+    <strong>Time:</strong>
+    <%= @clock.time %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @clock.status %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.clock_path(@conn, :edit, @clock) %></span> |
+<span><%= link "Back", to: Routes.clock_path(@conn, :index) %></span>
